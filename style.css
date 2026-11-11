@@ -1,7 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-1: #1a0305;
+    --bg-2: #5c0a0a;
+    --bg-3: #7f1d1d;
+    --glass: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --btn: rgba(255, 255, 255, 0.1);
+    --btn-hover: rgba(255, 255, 255, 0.2);
+    --accent: #ef4444;
+    --accent-2: #facc15;
+    --text: #fffbeb;
+    --display-text: #ffffff;
+}
+
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -9,103 +26,129 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background: #1a1a1a;
-
-    font-family: Arial, sans-serif;
-}
-
-.calculadora {
-    width: 330px;
     padding: 20px;
-
-    background: #292929;
-
-    border-radius: 20px;
-
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background:
+        radial-gradient(circle at 15% 20%, rgba(239, 68, 68, 0.4), transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(250, 204, 21, 0.3), transparent 45%),
+        linear-gradient(135deg, var(--bg-1), var(--bg-2) 60%, var(--bg-3));
+    background-attachment: fixed;
 }
 
-.display {
+.container {
     width: 100%;
-    height: 90px;
+    max-width: 350px;
+    padding: 25px;
+    border-radius: 24px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 0 60px rgba(239, 68, 68, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
 
-    margin-bottom: 20px;
-    padding: 15px;
-
+.calculation {
+    width: 100%;
+    min-height: 80px;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-
-    background: #111;
-    color: white;
-
-    border-radius: 12px;
-
-    overflow: hidden;
+    justify-content: flex-end;
+    font-size: 42px;
+    font-weight: 500;
+    text-align: end;
+    padding: 10px 15px;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.35);
+    color: var(--display-text);
+    text-shadow: 0 0 12px rgba(250, 204, 21, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.4);
+    overflow-x: auto;
+    word-break: break-all;
+    margin-bottom: 22px;
 }
 
-#resultado {
-    font-size: 38px;
-    white-space: nowrap;
-}
-
-.botoes {
+.buttons {
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
-
-    gap: 10px;
+    gap: 14px;
 }
 
-.botao {
-    height: 60px;
-
-    border: none;
-    border-radius: 12px;
-
-    background: #3b3b3b;
-    color: white;
-
-    font-size: 22px;
-
+button {
+    height: 55px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    outline: none;
+    border-radius: 16px;
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--text);
+    background: var(--btn);
     cursor: pointer;
-
-    transition: 0.1s;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.botao:hover {
-    background: #505050;
+button:hover {
+    background: var(--btn-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
 }
 
-.botao:active {
-    transform: scale(0.95);
+button:active {
+    transform: translateY(1px) scale(0.96);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-.operador {
-    background: #ff9500;
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
 }
 
-.operador:hover {
-    background: #ffad32;
-}
-
-.especial {
-    background: #666;
-}
-
-.especial:hover {
-    background: #777;
-}
-
-.igual {
-    background: #2196f3;
-}
-
-.igual:hover {
-    background: #42a5f5;
-}
-
-.zero {
+.spanBtn {
     grid-column: span 2;
+}
+
+.operator {
+    border: none;
+    color: #450a0a;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    box-shadow:
+        0 6px 18px rgba(239, 68, 68, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+.operator:hover {
+    background: linear-gradient(135deg, #f87171, #fde047);
+    box-shadow:
+        0 10px 26px rgba(250, 204, 21, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+}
+
+.operator:active {
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+}
+
+@media (max-width: 400px) {
+    .container {
+        padding: 18px;
+    }
+
+    .calculation {
+        font-size: 34px;
+        min-height: 70px;
+    }
+
+    .buttons {
+        gap: 11px;
+    }
+
+    button {
+        height: 50px;
+        font-size: 19px;
+    }
 }
