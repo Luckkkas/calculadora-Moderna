@@ -1,52 +1,44 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
-
+    <title>DModern calculator | Luckkas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="container">
+        <div class="calculation">0</div>
+        <div class="buttons">
+            <button id="clear">AC</button>
+            <button id="delete">DEL</button>
+            <button class="oprBtn">%</button>
+            <button class="operator oprBtn">/</button>
 
-    <div class="calculadora">
+            <button class="numBtn">7</button>
+            <button class="numBtn">8</button>
+            <button class="numBtn">9</button>
+            <button class="operator oprBtn">*</button>
 
-        <div class="display">
-            <span id="resultado">0</span>
+            <button class="numBtn">4</button>
+            <button class="numBtn">5</button>
+            <button class="numBtn">6</button>
+            <button class="operator oprBtn">-</button>
+
+            <button class="numBtn">1</button>
+            <button class="numBtn">2</button>
+            <button class="numBtn">3</button>
+            <button class="operator oprBtn">+</button>
+
+            <button class="spanBtn numBtn">0</button>
+            <button onclick="addDecimal()">.</button>
+            <button id="equalBtn" class="operator">=</button>
         </div>
-
-        <div class="botoes">
-
-            <button class="botao especial" onclick="limpar()">C</button>
-            <button class="botao especial" onclick="apagar()">⌫</button>
-            <button class="botao especial" onclick="porcentagem()">%</button>
-            <button class="botao operador" onclick="adicionar('/')">÷</button>
-
-            <button class="botao" onclick="adicionar('7')">7</button>
-            <button class="botao" onclick="adicionar('8')">8</button>
-            <button class="botao" onclick="adicionar('9')">9</button>
-            <button class="botao operador" onclick="adicionar('*')">×</button>
-
-            <button class="botao" onclick="adicionar('4')">4</button>
-            <button class="botao" onclick="adicionar('5')">5</button>
-            <button class="botao" onclick="adicionar('6')">6</button>
-            <button class="botao operador" onclick="adicionar('-')">−</button>
-
-            <button class="botao" onclick="adicionar('1')">1</button>
-            <button class="botao" onclick="adicionar('2')">2</button>
-            <button class="botao" onclick="adicionar('3')">3</button>
-            <button class="botao operador" onclick="adicionar('+')">+</button>
-
-            <button class="botao zero" onclick="adicionar('0')">0</button>
-            <button class="botao" onclick="adicionar('.')">.</button>
-            <button class="botao igual" onclick="calcular()">=</button>
-
-        </div>
-
     </div>
 
-    <script src="script.js"></script>
-
 </body>
+<script src="script.js"></script>
+
 </html>
